@@ -1,74 +1,31 @@
+<div class="image"></div>
 <div class="container">
-    <h1 class="title">Welcome to acedemic alerts</h1>
-    <h1 class="title">Registration</h1>
     <div class="row">
-        
-        <div class="card  blue-grey lighten-5">
+        <div class="card  lighten-5">
             <div class="card-content">
                 <!-- <form #userForm ="ngForm" (ngSubmit)="addUser(userForm)"> -->
-                <form #userForm ="ngForm">
+                <form #userForm="ngForm">
+                    <img class="logo" src="../../../assets/logo.png">
+                    <b><legend style="color:rgb(76, 190, 76)">Registrate</legend></b>
                     <div class="row">
                         <div class="input-field">
-                            <input type="text" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" placeholder="Put your name" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="userService.selectedUser.lastname" placeholder="Put your lastname" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <input type="text" name="motherlastname" #motherlastname="ngModel" [(ngModel)]="userService.selectedUser.motherlastname" placeholder="puts your mother´s lastname" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="puts your email" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <input type="password" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Create a password" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <input type="password" name="confirm_password"  placeholder="Confirm the password" >
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="input-field">
-                            <select name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role" >
+                            <input type="text" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" placeholder="Nombres">
+                            <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="userService.selectedUser.lastname" placeholder="Apellido Paterno">
+                            <input type="text" name="motherlastname" #motherlastname="ngModel" [(ngModel)]="userService.selectedUser.motherlastname" placeholder="Apellido Materno">
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Correo">
+                            <input type="password" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Contraseña">
+                            <input type="password" name="confirm_password" placeholder="Confirmar Contraseña">
+                            <select name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role">
                               <option value="" disabled selected>Choose your rol in the university</option>
-                              <option value="coodinator">Coodinator</option>
+                              <option value="coodinator">Cordinator</option>
                               <option value="director">Director</option>
-                              <option value="teacher">Teacher</option>
+                              <option value="teacher">Docente</option>
                             </select>
-                            <label>Choose status</label>
+                            <button class="btn left" [routerLink]="'/login'" (click)="addUser(userForm)">Registrarse</button>
                         </div>
                     </div>
-
-                    <div class="card-action">
-                        <div class="row">
-                            
-                            <div class="input-field">
-                                
-                                <button class="btn left" [routerLink]="'/'" (click)="addUser(userForm)">Save User</button>
-                            </div>
-       
-
-                        </div>
-                       
-
-                    </div>
-                    
                 </form>
             </div>
         </div>
     </div>
 </div>
-
-
-
-

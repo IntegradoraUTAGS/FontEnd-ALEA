@@ -1,42 +1,37 @@
+<div class="image"></div>
 <div class="container">
-    <h1 class="title">Welcome to acedemic alerts</h1>
-    <h1 class="title">Login</h1>
     <div class="row">
-        
-        <div class="card  blue-grey lighten-5">
+        <div class="card lighten-5">
             <div class="card-content">
                 <!-- <form #userForm ="ngForm" (ngSubmit)="addUser(userForm)"> -->
-                <form #loginForm ="ngForm">
+                <form #loginForm="ngForm">
+                    <img class="logo" src="../../../assets/logo.png">
+                    <b><legend style="color:rgb(76, 190, 76)">Iniciar Sesión</legend></b>
                     <div class="row">
                         <div class="input-field">
-                            <input type="text" name="email"  #email="ngModel" [(ngModel)]="loginService.selectedLogin.email"  placeholder="Username / email" >
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="loginService.selectedLogin.email" placeholder="Correo Electronico">
                         </div>
-                    </div>
-                    <div class="row">
                         <div class="input-field">
-                            <input type="text"   name="password"  #password="ngModel" [(ngModel)]="loginService.selectedLogin.password"  placeholder="Password" >
+                            <input type="password" name="password" #password="ngModel" [(ngModel)]="loginService.selectedLogin.password" placeholder="Contraseña">
                         </div>
-                    </div>
-                    <div class="card-action">
-                        <div class="row">
-                            <div class="col">
-                                <div class="input-field">
-                                    <p>Go!</p>
-                                    <button class="btn left" (click)="login(loginForm)"  >Login</button>
-                                </div>
-                                <!-- [routerLink]="'/main/home'" -->
-                            </div>
-                            <div class="col">
-                                <div class="input-field">
-                                    <p>No account yet?</p>
-                                    <a class="btn left" [routerLink]="'/users'">Create account</a>
-                                </div>
-                            </div>
-                        </div>
-                       
 
+
+
+                        <div class="col">
+                            <div class="input-field">
+                                <p>Iniciar Sesion</p>
+                                <button class="btn left" [routerLink]="'/home'" (click)="login(loginForm)">Acceder</button>
+                            </div>
+                            <!-- [routerLink]="'/main/home'" -->
+                        </div>
+                        <div class="col">
+                            <div class="input-field">
+                                <p>¿No Tienes Cuenta?</p>
+                                <a class="btn left" href="users">Registrate</a>
+                            </div>
+                        </div>
                     </div>
-                    
+
                 </form>
             </div>
         </div>

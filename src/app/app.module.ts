@@ -20,6 +20,8 @@ import { MyFollowUpComponent } from './components/my-follow-up/my-follow-up.comp
 import { GeneralFollowComponent } from './components/general-follow/general-follow.component';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
+import { InformacionComponent } from './informacion/informacion.component';
+import { BarraLateralComponent } from './barra-lateral/barra-lateral.component';
 
 
 const appRoutes: Routes = [
@@ -47,6 +49,8 @@ const appRoutes: Routes = [
     GeneralFollowComponent,
     MainComponent,
     LoginComponent,
+    InformacionComponent,
+    BarraLateralComponent,
 
   ],
   imports: [
