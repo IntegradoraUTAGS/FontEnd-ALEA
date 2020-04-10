@@ -1,0 +1,31 @@
+<div class="image"></div>
+<div class="container">
+    <div class="row">
+        <div class="card  lighten-5">
+            <div class="card-content">
+                <!-- <form #userForm ="ngForm" (ngSubmit)="addUser(userForm)"> -->
+                <form #userForm="ngForm">
+                    <img class="logo" src="../../../assets/logo.png">
+                    <b><legend style="color:rgb(76, 190, 76)">Registrate</legend></b>
+                    <div class="row">
+                        <div class="input-field">
+                            <input type="text" name="name" #name="ngModel" [(ngModel)]="userService.selectedUser.name" placeholder="Nombres">
+                            <input type="text" name="lastname" #lastname="ngModel" [(ngModel)]="userService.selectedUser.lastname" placeholder="Apellido Paterno">
+                            <input type="text" name="motherlastname" #motherlastname="ngModel" [(ngModel)]="userService.selectedUser.motherlastname" placeholder="Apellido Materno">
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="userService.selectedUser.email" placeholder="Correo">
+                            <input type="password" name="password" #password="ngModel" [(ngModel)]="userService.selectedUser.password" placeholder="Contraseña">
+                            <input type="password" name="confirm_password" placeholder="Confirmar Contraseña">
+                            <select name="role" #role="ngModel" [(ngModel)]="userService.selectedUser.role">
+                              <option value="" disabled selected>Choose your rol in the university</option>
+                              <option value="coodinator">Cordinator</option>
+                              <option value="director">Director</option>
+                              <option value="teacher">Docente</option>
+                            </select>
+                            <button class="btn left" [routerLink]="'/login'" (click)="addUser(userForm)">Registrarse</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

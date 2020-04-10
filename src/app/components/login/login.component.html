@@ -1,0 +1,39 @@
+<div class="image"></div>
+<div class="container">
+    <div class="row">
+        <div class="card lighten-5">
+            <div class="card-content">
+                <!-- <form #userForm ="ngForm" (ngSubmit)="addUser(userForm)"> -->
+                <form #loginForm="ngForm">
+                    <img class="logo" src="../../../assets/logo.png">
+                    <b><legend style="color:rgb(76, 190, 76)">Iniciar Sesión</legend></b>
+                    <div class="row">
+                        <div class="input-field">
+                            <input type="text" name="email" #email="ngModel" [(ngModel)]="loginService.selectedLogin.email" placeholder="Correo Electronico">
+                        </div>
+                        <div class="input-field">
+                            <input type="password" name="password" #password="ngModel" [(ngModel)]="loginService.selectedLogin.password" placeholder="Contraseña">
+                        </div>
+
+
+
+                        <div class="col">
+                            <div class="input-field">
+                                <p>Iniciar Sesion</p>
+                                <button class="btn left" [routerLink]="'/home'" (click)="login(loginForm)">Acceder</button>
+                            </div>
+                            <!-- [routerLink]="'/main/home'" -->
+                        </div>
+                        <div class="col">
+                            <div class="input-field">
+                                <p>¿No Tienes Cuenta?</p>
+                                <a class="btn left" href="users">Registrate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
