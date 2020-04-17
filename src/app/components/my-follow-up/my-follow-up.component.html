@@ -1,26 +1,87 @@
 
 <div class="container">
-    <h1 class="title">My follow-up</h1><br> 
+    <h1 class="title">Mi seguimiento</h1><br> 
     <div class="row">
-        <div class="col ">
-          <div class="card blue-grey darken-1">
+      Configuración
+      <p>
+        <label>
+          <input type="checkbox"  (change)="cambio($event)"/>
+          <span>Adjuntar archivos</span>
+        </label>
+      </p>
+      <p>Buscar alerta (Ingresa la matrícula)</p>
+      <div class="input-field col s6">
+        <i class="material-icons prefix">account_circle</i>
+        <input id="icon_prefix" type="text" class="validate" #user>
+        <label for="icon_prefix">Matrícula del estudiante</label>
+        <button >BUSCAR</button>
+      </div>
+    </div>
+    <div class="row" *ngFor="let x of listAlerts">
+        <div class="col s12">
+          <div class="card blue-grey darken-1" >
             <div class="card-content white-text">
-              <span class="card-title">Card Title</span>
-              <p>I am a very simple card. I am good at containing small bits of information.
-              I am convenient because I require little markup to use effectively.</p>
+              <span>Fecha de inicio: {{x.date|date}}</span>
+              <span class="card-title">{{x.student_name}} - {{x.matricula}}</span>
+              <p>Incidencia: {{x.incidence}}</p>
+              <p>Primer seguimiento: {{x.tracing}}</p>
+              <p>comentarios: {{x.comment}}</p>
             </div>
             <div class="card-action">
                 
                 <div class="input-field ">
-                    <i class="material-icons prefix">mode_edit</i>
-                    <textarea id="icon_prefix2" class="materialize-textarea"></textarea>
-                    <label for="icon_prefix2">New activity </label>
+                  
+                    
+                    <!-- name="comments" #comments="ngModel" [(ngModel)]="alertService.selectedAlert.comments" -->
+                    <!-- <textarea  id="icon_prefix2" class="materialize-textarea"></textarea>  -->
+                    
+                    
+                    
                     
                     <div class="row">
-                        <div class="col"><a class="waves-effect waves-light btn"><i class="material-icons right">send</i>Send</a></div>
-                        <div class="col"><a class="waves-effect waves-light btn"><i class="material-icons right">attach_file</i>Add file</a></div>
+                      <form #commentForm='ngForm'>
+                        <!-- <input type="hidden"  name="alert" #alert="ngModel" [(ngModel)]= "alertId"> -->
+                        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]= "commentService.selectedComment._id">
+                        <div class="input-field">
+                          <i class="material-icons prefix">mode_edit</i>
+                          <input type="text" name="comment" #comments="ngModel" [(ngModel)]="commentService.selectedComment.comment">
+                          <label for="icon_prefix2">Nueva actividad </label> 
+                        </div>
+                       
+                        <div ><a (click)="comment(commentForm)" class="waves-effect waves-light btn"><i class="material-icons right">send</i>Enviar</a></div>
+                      </form>
                         
+                          
+                        
+                        <!-- <div class="col"><a class="waves-effect waves-light btn"><i class="material-icons right">attach_file</i>Add file</a></div> -->
+                        <div>
+                          
+                        </div>
+                        <!-- *ngIf="check == true" -->
+                        <div class="row"  >
+                          <form [formGroup] = "fileService.uploadForm" (ngSubmit)="onSubmit()">      
+                            <div class = "file-field input-field">
+                              <div class = "btn">
+                                <span>Añadir archivo</span>
+                                
+                                <input type="file" name="profile" (change)="onFileSelect($event)" />
+                                <i class="material-icons right">attach_file</i>
+                              </div>
+                              <div class = "file-path-wrapper">
+                                <input class = "file-path validate" type = "text" placeholder = "Upload file"  />
+                              </div>
+                               
+                            </div>
+                            <button class="btn" type="submit"><i class="material-icons right">file_upload</i>Subir archivo</button>
+                            <!-- <div *ngFor="let item of listFiles"> -->
+                              <!-- <button class="btn" type="submit"><i class="material-icons right">file_upload</i>Upload</button> -->
+                              <!-- <a>{{item}}</a> -->
+                            <!-- </div> -->
+                          </form>
+                        </div>
+                      
                     </div>
+                
                 </div>
                
             </div>

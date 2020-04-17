@@ -11,6 +11,7 @@ declare let M: any;
   providers: [UserService]
 })
 export class UsersComponent implements OnInit {
+  checkB:Boolean;
   // user = {
   //   name : '',
   //   lastname: '',
@@ -25,10 +26,15 @@ export class UsersComponent implements OnInit {
 
   ngOnInit(): void {
     
-    document.addEventListener('DOMContentLoaded', function() {
+  
       var elems = document.querySelectorAll('select');
       var instances = M.FormSelect.init(elems);
-    });
+    
+  }
+
+  check(event){
+    console.log(event.explicitOriginalTarget.checked);
+    this.checkB = event.explicitOriginalTarget.checked
   }
 
   addUser(form: NgForm){

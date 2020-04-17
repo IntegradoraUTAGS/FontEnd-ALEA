@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from  '@angular/material/toolbar';
 import { MatIconModule } from  '@angular/material/icon';
 import { MatSidenavModule } from  '@angular/material/sidenav';
+import {MatSelectModule} from '@angular/material/select';
 import { MatListModule } from  '@angular/material/list';
 import { MatButtonModule } from  '@angular/material/button';
 import {MatInputModule} from '@angular/material/input'; 
@@ -20,9 +21,12 @@ import { MyFollowUpComponent } from './components/my-follow-up/my-follow-up.comp
 import { GeneralFollowComponent } from './components/general-follow/general-follow.component';
 import { MainComponent } from './components/main/main.component';
 import { LoginComponent } from './components/login/login.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 import {AuthGuard} from './auth.guard';
 import {TokenInterceptorService} from './services/token-interceptor.service';
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
+
 
 const appRoutes: Routes = [
   //Roting loggin with another pages
@@ -50,7 +54,8 @@ const appRoutes: Routes = [
     GeneralFollowComponent,
     MainComponent,
     LoginComponent,
-    UserSettingsComponent,
+    UserSettingsComponent
+
 
   ],
   imports: [
@@ -63,7 +68,10 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatSidenavModule,
     MatListModule,
+    ReactiveFormsModule,
     MatInputModule,
+    Ng2SearchPipeModule,
+    MatSelectModule,
     MatButtonModule,
     MatIconModule,
     BrowserAnimationsModule,
