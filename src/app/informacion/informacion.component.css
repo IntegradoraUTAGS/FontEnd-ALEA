@@ -1,0 +1,71 @@
+.tel {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 165px;
+    top: 10px;
+}
+
+.correo {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 165px;
+    top: 40px;
+}
+
+.facebook {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 165px;
+    top: 70px;
+}
+
+.twitter {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 115px;
+    top: 70px;
+}
+
+.youtube {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 63px;
+    top: 70px;
+}
+
+.instagram {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 10px;
+    top: 70px;
+}
+
+.num {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    right: 47px;
+    top: 10px;
+}
+
+.correo2 {
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    position: absolute;
+    right: 10px;
+    top: 40px;
+}
+
+.logo {
+    position: absolute;
+    top: 5px;
+    left: 10px;
+}
+
+.principal {
+    width: 100%;
+}
